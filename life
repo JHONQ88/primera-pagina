@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIFESTYLE & TECH - Productos Innovadores</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1F2937;line-height:1.6}
+.top-banner{background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.top-banner span{color:#06B6D4;font-weight:700}
+header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
+nav{max-width:1400px;margin:0 auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:800;background:linear-gradient(135deg,#0F172A 0%,#06B6D4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:#0F172A;text-decoration:none;font-weight:500;font-size:14px}
+.cta-nav{background:#F97316;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E293B 50%,#334155 100%);color:#fff;padding:60px 20px;text-align:center}
+.hero h1{font-size:36px;font-weight:900;margin-bottom:15px;line-height:1.2}
+.hero h1 .highlight{color:#06B6D4}
+.hero p{font-size:16px;margin-bottom:30px;opacity:.9}
+.hero-cta{display:inline-block;background:#F97316;color:#fff;padding:15px 40px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+section{max-width:1400px;margin:0 auto;padding:50px 20px}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:32px;font-weight:800;color:#0F172A;margin-bottom:10px}
+.section-title .subtitle{color:#64748B;font-size:16px}
+.bestsellers{background:#F8FAFC}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);position:relative}
+.product-badge{position:absolute;top:12px;left:12px;background:#F97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;z-index:2}
+.product-image{width:100%;height:200px;background:linear-gradient(135deg,#E2E8F0 0%,#CBD5E1 100%);display:flex;align-items:center;justify-content:center;font-size:60px}
+.product-info{padding:20px}
+.product-title{font-size:16px;font-weight:700;color:#0F172A;margin-bottom:8px}
+.product-description{color:#64748B;font-size:13px;margin-bottom:12px}
+.product-footer{display:flex;justify-content:space-between;align-items:center}
+.product-price{font-size:24px;font-weight:800;color:#06B6D4}
+.product-price .old-price{font-size:14px;color:#94A3B8;text-decoration:line-through;margin-left:6px}
+.add-cart-btn{background:#0F172A;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;display:inline-block;font-size:13px}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 12px rgba(37,211,102,.4);z-index:1000;text-decoration:none}
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.category-card{background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#fff;padding:40px 20px;border-radius:16px;text-align:center}
+.category-icon{font-size:50px;margin-bottom:15px}
+.category-title{font-size:20px;font-weight:700;margin-bottom:8px}
+.category-subtitle{opacity:.8;font-size:14px}
+.flash-sale{background:linear-gradient(135deg,#F97316 0%,#EA580C 100%);color:#fff;text-align:center}
+.countdown{display:flex;justify-content:center;gap:15px;margin:30px 0;flex-wrap:wrap}
+.countdown-item{background:rgba(255,255,255,.2);padding:15px 25px;border-radius:10px}
+.countdown-number{font-size:36px;font-weight:800;display:block}
+.countdown-label{font-size:12px;opacity:.9}
+.testimonials{background:#F8FAFC}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.testimonial-card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.stars{color:#FBBF24;font-size:18px;margin-bottom:12px}
+.testimonial-text{color:#475569;margin-bottom:15px;font-style:italic;font-size:14px}
+.testimonial-author{font-weight:700;color:#0F172A;font-size:14px}
+footer{background:#0F172A;color:#fff;padding:40px 20px 20px}
+.footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}
+.footer-section h3{color:#06B6D4;margin-bottom:15px;font-size:16px}
+.footer-section ul{list-style:none}
+.footer-section ul li{margin-bottom:10px}
+.footer-section a{color:#94A3B8;text-decoration:none;font-size:14px}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #334155;color:#64748B;font-size:13px}
+@media(max-width:768px){
+.hero h1{font-size:28px}
+.section-title h2{font-size:26px}
+.nav-links{display:none}
+.product-image{height:180px;font-size:50px}
+}
+</style>
+</head>
+<body>
+<div class="top-banner">💰 <span>PAGO CONTRAENTREGA</span> - Pagas cuando recibes | 🚚 Envío a toda Colombia</div>
+<header>
+<nav>
+<div class="logo">LIFESTYLE & TECH</div>
+<ul class="nav-links">
+<li><a href="#bestsellers">Más Vendidos</a></li>
+<li><a href="#categories">Categorías</a></li>
+<li><a href="#ofertas">Ofertas</a></li>
+</ul>
+<a href="#" class="cta-nav">💬 WhatsApp</a>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h1>Productos <span class="highlight">Innovadores</span><br>Para Tu Vida Diaria</h1>
+<p>Lo último en tecnología, belleza y lifestyle. Los mejores productos al mejor precio.</p>
+<a href="#bestsellers" class="hero-cta">Explorar Productos ⚡</a>
+</div>
+</section>
+<section id="bestsellers" class="bestsellers">
+<div class="section-title">
+<h2>🔥 Más Vendidos</h2>
+<p class="subtitle">Los productos favoritos de nuestros clientes</p>
+</div>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-badge">MÁS VENDIDO</div>
+<div class="product-image">📱</div>
+<div class="product-info">
+<h3 class="product-title">Auriculares Inalámbricos Pro</h3>
+<p class="product-description">Sonido premium, cancelación de ruido, 30h batería</p>
+<div class="product-footer">
+<div class="product-price">$89.900<span class="old-price">$129.900</span></div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Auriculares Inalámbricos Pro','89900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-badge">TRENDING</div>
+<div class="product-image">💧</div>
+<div class="product-info">
+<h3 class="product-title">Termo Stanley 1L</h3>
+<p class="product-description">Mantiene frío 48h, calor 24h. Sostenible</p>
+<div class="product-footer">
+<div class="product-price">$119.900</div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Termo Stanley 1L','119900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-badge">NUEVO</div>
+<div class="product-image">✨</div>
+<div class="product-info">
+<h3 class="product-title">Skincare Stick Facial</h3>
+<p class="product-description">Hidratación profunda, ácido hialurónico</p>
+<div class="product-footer">
+<div class="product-price">$45.900<span class="old-price">$65.900</span></div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Skincare Stick Facial','45900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-badge">OFERTA</div>
+<div class="product-image">💪</div>
+<div class="product-info">
+<h3 class="product-title">Pistola de Masaje</h3>
+<p class="product-description">6 velocidades, recuperación muscular</p>
+<div class="product-footer">
+<div class="product-price">$159.900<span class="old-price">$249.900</span></div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Pistola de Masaje','159900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image">⌚</div>
+<div class="product-info">
+<h3 class="product-title">Smartwatch Fitness</h3>
+<p class="product-description">Monitor cardíaco, GPS, resistente al agua</p>
+<div class="product-footer">
+<div class="product-price">$199.900</div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Smartwatch Fitness','199900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image">💡</div>
+<div class="product-info">
+<h3 class="product-title">Luces LED RGB Smart</h3>
+<p class="product-description">Control por app, 16M colores, música</p>
+<div class="product-footer">
+<div class="product-price">$79.900</div>
+<a href="#" class="add-cart-btn" onclick="ordenarWhatsApp('Luces LED RGB Smart','79900');return false">Ordenar</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="categories">
+<div class="section-title">
+<h2>Explora Por Categoría</h2>
+<p class="subtitle">Encuentra exactamente lo que necesitas</p>
+</div>
+<div class="categories-grid">
+<div class="category-card">
+<div class="category-icon">💄</div>
+<h3 class="category-title">Belleza & Wellness</h3>
+<p class="category-subtitle">Skincare, maquillaje, spa</p>
+</div>
+<div class="category-card">
+<div class="category-icon">📱</div>
+<h3 class="category-title">Tech Essentials</h3>
+<p class="category-subtitle">Gadgets, accesorios</p>
+</div>
+<div class="category-card">
+<div class="category-icon">🏠</div>
+<h3 class="category-title">Home & Lifestyle</h3>
+<p class="category-subtitle">Decoración, organización</p>
+</div>
+<div class="category-card">
+<div class="category-icon">🏃</div>
+<h3 class="category-title">Fitness & Outdoors</h3>
+<p class="category-subtitle">Deportes, aventura</p>
+</div>
+</div>
+</section>
+<section id="ofertas" class="flash-sale">
+<div class="section-title">
+<h2 style="color:#fff">⚡ Ofertas Flash</h2>
+<p class="subtitle" style="color:rgba(255,255,255,.9)">¡Ofertas por tiempo limitado!</p>
+</div>
+<div class="countdown">
+<div class="countdown-item">
+<span class="countdown-number" id="hours">12</span>
+<span class="countdown-label">HORAS</span>
+</div>
+<div class="countdown-item">
+<span class="countdown-number" id="minutes">45</span>
+<span class="countdown-label">MINUTOS</span>
+</div>
+<div class="countdown-item">
+<span class="countdown-number" id="seconds">30</span>
+<span class="countdown-label">SEGUNDOS</span>
+</div>
+</div>
+<a href="#bestsellers" class="hero-cta">Ver Ofertas Ahora</a>
+</section>
+<section class="testimonials">
+<div class="section-title">
+<h2>⭐ Lo Que Dicen Nuestros Clientes</h2>
+<p class="subtitle">Más de 5,000 clientes satisfechos en Colombia</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">"Los auriculares llegaron super rápido y la calidad es increíble. Mejor que los de tiendas físicas!"</p>
+<p class="testimonial-author">- María G., Bogotá</p>
+</div>
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">"El termo Stanley es tal cual como en las fotos. Mantiene el café caliente todo el día. 100% recomendado."</p>
+<p class="testimonial-author">- Carlos R., Medellín</p>
+</div>
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">"Excelente servicio al cliente y envío gratis. Los productos son originales y funcionan perfecto."</p>
+<p class="testimonial-author">- Laura M., Cali</p>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>LIFESTYLE & TECH</h3>
+<p style="color:#94A3B8;font-size:14px">Tu tienda de confianza para productos innovadores en Colombia.</p>
+</div>
+<div class="footer-section">
+<h3>Compra</h3>
+<ul>
+<li><a href="#">Más Vendidos</a></li>
+<li><a href="#">Nuevos Productos</a></li>
+<li><a href="#">Ofertas</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Ayuda</h3>
+<ul>
+<li><a href="#">Envíos</a></li>
+<li><a href="#">Pagos</a></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Síguenos</h3>
+<ul>
+<li><a href="#">Instagram</a></li>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">TikTok</a></li>
+<li><a href="#">WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2024 LIFESTYLE & TECH | Medellín, Colombia</p>
+</div>
+</footer>
+<a href="https://wa.me/57TUPHONENUMBER?text=Hola!%20Quiero%20información" class="whatsapp-float" title="Chatea">💬</a>
+<script>
+const WHATSAPP_NUMBER='573001234567';
+function ordenarWhatsApp(producto,precio){
+const mensaje=`🛒 *QUIERO ORDENAR*%0A%0A📦 Producto: ${producto}%0A💰 Precio: $${formatPrecio(precio)} COP%0A💳 Pago: Contraentrega%0A%0APor favor envíame información y confirmo con:%0A- Nombre completo%0A- Dirección%0A- Ciudad%0A- Teléfono`;
+window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${mensaje}`,'_blank')
+}
+function formatPrecio(precio){
+return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")
+}
+function updateCountdown(){
+const hours=document.getElementById('hours');
+const minutes=document.getElementById('minutes');
+const seconds=document.getElementById('seconds');
+let h=parseInt(hours.textContent);
+let m=parseInt(minutes.textContent);
+let s=parseInt(seconds.textContent);
+s--;
+if(s<0){s=59;m--}
+if(m<0){m=59;h--}
+if(h<0){h=23;m=59;s=59}
+hours.textContent=h.toString().padStart(2,'0');
+minutes.textContent=m.toString().padStart(2,'0');
+seconds.textContent=s.toString().padStart(2,'0')
+}
+setInterval(updateCountdown,1000);
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener('click',function(e){
+e.preventDefault();
+const target=document.querySelector(this.getAttribute('href'));
+if(target)target.scrollIntoView({behavior:'smooth',block:'start'})
+})
+});
+</script>
+</body>
+</html>
